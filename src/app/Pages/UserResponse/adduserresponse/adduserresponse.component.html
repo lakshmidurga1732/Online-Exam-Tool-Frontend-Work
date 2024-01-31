@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Add User Response</h2>
+  <form name="userResponseForm" #f="ngForm" (ngSubmit)="f.form.valid && addUserResponse()">
+    <table class="table">
+      <tr>
+        <td>
+          <label for="testID">Test ID</label>
+        </td>
+        <td>
+          <input type="number" id="testID" class="form-control" name="testID" [(ngModel)]="userresponse.testID" required
+            #testID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && testID.errors }" />
+          <div *ngIf="f.submitted && testID.errors" class="invalid-feedback">
+            <div *ngIf="testID.errors['required']">Test ID is required</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="questionID">Question ID</label>
+        </td>
+        <td>
+          <input type="number" id="questionID" class="form-control" name="questionID" [(ngModel)]="userresponse.questionID"
+            required #questionID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && questionID.errors }" />
+          <div *ngIf="f.submitted && questionID.errors" class="invalid-feedback">
+            <div *ngIf="questionID.errors['required']">Question ID is required</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="userAnswer">User Answer</label>
+        </td>
+        <td>
+          <input type="text" id="userAnswer" class="form-control" name="userAnswer" [(ngModel)]="userresponse.userAnswer"
+            required #userAnswer="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userAnswer.errors }" />
+          <div *ngIf="f.submitted && userAnswer.errors" class="invalid-feedback">
+            <div *ngIf="userAnswer.errors['required']">User Answer is required</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <button type="submit" class="btn btn-primary">Add User Response</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

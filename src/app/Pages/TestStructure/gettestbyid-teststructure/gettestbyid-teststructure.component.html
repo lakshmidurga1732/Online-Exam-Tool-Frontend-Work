@@ -1,0 +1,64 @@
+<div class="container">
+    <table class="table table-bordered table-striped" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Test ID</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="testId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isTestExist">
+        <tr>
+            <td>Test ID</td>
+            <td>
+                <input type="number" [(ngModel)]="teststructure.testID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Site ID</td>
+            <td>
+                <input type="number" [(ngModel)]="teststructure.siteID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Test Name</td>
+            <td>
+                <input type="text" [(ngModel)]="teststructure.testName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>No of Questions</td>
+            <td>
+                <input type="number" [(ngModel)]="teststructure.noOfQuestions" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Total Marks</td>
+            <td>
+                <input type="number" [(ngModel)]="teststructure.totalMarks" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td>
+                <input type="number" [(ngModel)]="teststructure.duration" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>

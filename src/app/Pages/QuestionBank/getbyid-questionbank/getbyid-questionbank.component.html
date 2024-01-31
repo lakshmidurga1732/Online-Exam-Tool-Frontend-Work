@@ -1,0 +1,55 @@
+<div class="container">
+    <table class="table table-bordered table-striped" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Question Id</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="questionId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isQuestionbankExist">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" [(ngModel)]="questionbank.questionID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>subject Id</td>
+            <td>
+                <input type="number" [(ngModel)]="questionbank.subjectID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>questionText</td>
+            <td>
+                <input type="text" [(ngModel)]="questionbank.questionText" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Answer</td>
+            <td>
+                <input type="text" [(ngModel)]="questionbank.answer" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+

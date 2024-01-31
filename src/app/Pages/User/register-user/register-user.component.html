@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="register-form" style="width: 50%;">
+        <form name="registrationForm" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="name" required
+                    #nameInput="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nameInput.errors }" />
+                <div *ngIf="f.submitted && nameInput.errors" class="invalid-feedback">
+                    <div *ngIf="nameInput.errors['required']">Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="email" required
+                    #emailInput="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailInput.errors }" />
+                <div *ngIf="f.submitted && emailInput.errors" class="invalid-feedback">
+                    <div *ngIf="emailInput.errors['required']">Email is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="password" required
+                    minlength="4" maxlength="20" #passwordInput="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && passwordInput.errors }" />
+                <div *ngIf="f.submitted && passwordInput.errors" class="invalid-feedback">
+                    <div *ngIf="passwordInput.errors['required']">Password is required</div>
+                    <div *ngIf="passwordInput.errors['minlength']">Password must be at least 4 characters</div>
+                    <div *ngIf="passwordInput.errors['maxlength']">Password must not exceed 20 characters</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Role</label>
+                <select class="form-control" name="role" [(ngModel)]="selectedrole" required
+                        #roleInput="ngModel" [ngClass]="{ 'is-invalid': f.submitted && roleInput.errors }">
+                  <option *ngFor="let r of role" [value]="r">{{ r }}</option>
+                </select>
+                <div *ngIf="f.submitted && roleInput.errors" class="invalid-feedback">
+                  <div *ngIf="roleInput.errors['required']">Role is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Site Name</label>
+                <select class="form-control" name="Site Name" (change)="onSiteIdChange()" [(ngModel)]="siteID" [ngModelOptions]="{ standalone: true }">
+                  <option *ngFor="let item of items" [value]="item.siteID">{{item.siteName}}</option>
+                </select>
+                <div *ngIf="f.submitted && roleInput.errors" class="invalid-feedback">
+                    <div *ngIf="roleInput.errors['required']">Site ID is required</div>
+                  </div>
+              </div>
+              <tr>
+                <td colspan="2">
+                    <app-image-upload></app-image-upload>
+                </td>
+            </tr>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-register">Register</button>
+                <button type="button" (click)="onReset(f)" class="btn btn-reset float-right">Reset</button>
+            </div>
+
+            <div class="form-group">
+                <span>{{errMsg}}</span>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Add Organization</h2>
+  <form name="organizationForm" #f="ngForm" (ngSubmit)="f.form.valid && addOrganization()">
+      <div class="form-group">
+          <label for="organizationName">Organization Name</label>
+          <input type="text" id="organizationName" class="form-control" name="organizationName"
+              [(ngModel)]="organization.name" required #organizationName="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && organizationName.errors }" />
+          <div *ngIf="f.submitted && organizationName.errors" class="invalid-feedback">
+              <div *ngIf="organizationName.errors['required']">Organization Name is required</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add Organization</button>
+      </div>
+  </form>
+</div>

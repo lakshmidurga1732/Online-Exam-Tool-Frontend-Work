@@ -1,0 +1,25 @@
+<div class="container">
+<h2>List of Organization</h2>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let organization of organizations">
+        <td>{{ organization.id }}</td>
+        <td>{{ organization.name }}</td>
+        <td>
+          
+          <button class="btn btn-info" (click)="edit(organization.id)">Edit</button>
+          <button class="btn btn-danger" (click)="delete(organization)">Delete</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

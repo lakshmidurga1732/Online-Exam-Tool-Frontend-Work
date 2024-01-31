@@ -1,0 +1,53 @@
+<div class="container">
+    <table class="table" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Response ID</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="responseId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isUserResponseExist">
+        <tr>
+            <td>Response ID</td>
+            <td>
+                <input type="number" [(ngModel)]="userresponse.responseID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Test ID</td>
+            <td>
+                <input type="number" [(ngModel)]="userresponse.testID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Question ID</td>
+            <td>
+                <input type="number" [(ngModel)]="userresponse.questionID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>User Answer</td>
+            <td>
+            <input type="text" [(ngModel)]="userresponse.userAnswer" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+                <button class="btn btn-primary" (click)="delete()">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

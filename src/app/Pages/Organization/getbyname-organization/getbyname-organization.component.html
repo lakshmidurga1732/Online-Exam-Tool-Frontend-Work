@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Organization Name</label>
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="name" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isOrganizationExist">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" [(ngModel)]="organization.id" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Organization Name</td>
+            <td>
+                <input type="text" [(ngModel)]="organization.name" readonly class="form-control">
+            </td>
+        </tr>
+    </table>
+</div>
+

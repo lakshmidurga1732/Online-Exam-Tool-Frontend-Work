@@ -1,0 +1,29 @@
+<div class ='container'>
+    <h2>List of Subjects</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th> subject ID</th>
+                <th>site ID</th>
+                <th>Subject Name</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of subjects">
+                <td>{{item.subjectID}}</td>
+                <td>{{item.siteID}}</td>
+                <td>{{item.subjectName}}</td>
+                <td>
+                <button class="btn btn-primary" (click)="edit(item.subjectID)">Edit</button>
+                <!-- <button class="btn btn-danger" (click)="delete(item)">Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+
+

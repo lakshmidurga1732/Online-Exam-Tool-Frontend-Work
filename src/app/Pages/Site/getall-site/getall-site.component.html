@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>List of Sites</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Organization ID</th>
+                <th>Site Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let site of site">
+                <td>{{ site.siteID }}</td>
+                <td>{{ site.orgID }}</td>
+                <td>{{ site.siteName }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="edit(site.siteID)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(site)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

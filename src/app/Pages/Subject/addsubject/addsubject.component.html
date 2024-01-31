@@ -1,0 +1,27 @@
+<!-- addsubject.component.html -->
+<div class="container">
+  <h2>Add Subject</h2>
+  <form name="subjectForm" #f="ngForm" (ngSubmit)="f.form.valid && addSubject()">
+    <div class="form-group">
+      <label for="siteID">Site Id</label>
+      <input type="number" id="siteID" class="form-control" name="siteID" [(ngModel)]="subject.siteID" required #siteID="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && siteID.errors }" />
+      <div *ngIf="f.submitted && siteID.errors" class="invalid-feedback">
+        <div *ngIf="siteID.errors['required']">Site Id is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subjectName">Subject Name</label>
+      <input type="text" id="subjectName" class="form-control" name="subjectName" [(ngModel)]="subject.subjectName" required
+        #subjectName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subjectName.errors }" />
+      <div *ngIf="f.submitted && subjectName.errors" class="invalid-feedback">
+        <div *ngIf="subjectName.errors['required']">Subject Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Add Subject</button>
+    </div>
+  </form>
+</div>

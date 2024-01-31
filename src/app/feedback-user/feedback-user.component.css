@@ -1,0 +1,60 @@
+.container {
+    color:green; /* Set the default text color for the container */
+  }
+  
+  .card-body {
+    color: rgb(50, 50, 50); /* Set the default text color for the card body */
+  }
+  
+  .star-rating h6 {
+    color: #0e0d0d; /* Set the color for the numbers next to radio buttons */
+  }
+  
+  .text-danger {
+    color: #ff0000; /* Set the color for the text-danger class */
+  }
+  
+  .btn-primary {
+    color: #ffffff; /* Set the text color for the primary button */
+    background-color: #007bff; /* Set the background color for the primary button */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Set the background color for the primary button on hover */
+  }
+  
+  .btn-success {
+    color: #ffffff; /* Set the text color for the success button */
+    background-color: #28a745; /* Set the background color for the success button */
+  }
+  
+  .btn-success:hover {
+    background-color: #218838; /* Set the background color for the success button on hover */
+  }
+  
+  .text-success {
+    color: #28a745; /* Set the color for the text-success class */
+  }
+  
+.star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .star-rating h6 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .star-rating label {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .star-rating input:checked + label {
+    filter: grayscale(0);
+  }
+  

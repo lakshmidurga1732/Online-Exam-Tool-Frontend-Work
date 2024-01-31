@@ -1,0 +1,95 @@
+<div class="container">
+    <h2>Add Test Structure</h2>
+    <form name="testForm" #f="ngForm" (ngSubmit)="f.form.valid && addTestStructure()">
+      <table class="table">
+        <tr>
+          <td>
+            <label for="siteID">Site ID</label>
+          </td>
+          <td>
+              <input type="number" id="siteID" class="form-control" name="siteID" [(ngModel)]="test.siteID" required
+                  #subjectID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subjectID.errors }" />
+              <div *ngIf="f.submitted && subjectID.errors" class="invalid-feedback">
+                  <div *ngIf="subjectID.errors['required']">Subject ID is required</div>
+              </div>
+          </td>
+      </tr>
+            
+              
+              
+                
+            
+        <tr>
+          <td>
+              <label for="subjectID">Subject ID</label>
+          </td>
+          <td>
+              <input type="number" id="subjectID" class="form-control" name="subjectID" [(ngModel)]="test.subjectID" required
+                  #subjectID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subjectID.errors }" />
+              <div *ngIf="f.submitted && subjectID.errors" class="invalid-feedback">
+                  <div *ngIf="subjectID.errors['required']">Subject ID is required</div>
+              </div>
+          </td>
+      </tr>
+  
+        <tr>
+          <td>
+            <label for="testName">Test Name</label>
+          </td>
+          <td>
+            <input type="text" id="testName" class="form-control" name="testName" [(ngModel)]="test.testName" required
+              #testName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && testName.errors }" />
+            <div *ngIf="f.submitted && testName.errors" class="invalid-feedback">
+              <div *ngIf="testName.errors['required']">Test Name is required</div>
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="noOfQuestions">No. of Questions</label>
+          </td>
+          <td>
+            <input type="number" id="noOfQuestions" class="form-control" name="noOfQuestions" [(ngModel)]="test.noOfQuestions"
+              required #noOfQuestions="ngModel" [ngClass]="{ 'is-invalid': f.submitted && noOfQuestions.errors }" />
+            <div *ngIf="f.submitted && noOfQuestions.errors" class="invalid-feedback">
+              <div *ngIf="noOfQuestions.errors['required']">No. of Questions is required</div>
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="totalMarks">Total Marks</label>
+          </td>
+          <td>
+            <input type="number" id="totalMarks" class="form-control" name="totalMarks" [(ngModel)]="test.totalMarks" required
+              #totalMarks="ngModel" [ngClass]="{ 'is-invalid': f.submitted && totalMarks.errors }" />
+            <div *ngIf="f.submitted && totalMarks.errors" class="invalid-feedback">
+              <div *ngIf="totalMarks.errors['required']">Total Marks is required</div>
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <label for="duration">Duration</label>
+          </td>
+          <td>
+            <input type="number" id="duration" class="form-control" name="duration" [(ngModel)]="test.duration" required
+              #duration="ngModel" [ngClass]="{ 'is-invalid': f.submitted && duration.errors }" />
+            <div *ngIf="f.submitted && duration.errors" class="invalid-feedback">
+              <div *ngIf="duration.errors['required']">Duration is required</div>
+            </div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td colspan="2">
+            <button type="submit" class="btn btn-primary">Add Test</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  

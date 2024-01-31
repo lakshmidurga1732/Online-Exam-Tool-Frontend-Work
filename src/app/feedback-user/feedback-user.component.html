@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">YOUR TEST IS SUBMITTED SUCCESSFULLY!!</h2>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="mb-4">Feedback Form</h2>
+
+          <div class="form-group">
+            <label for="starRating">Your Rating</label>
+            <div class="star-rating">
+              <h6>1</h6> <input type="radio" id="star5" name="rating" [(ngModel)]="starRating" [value]="5" />
+              <label for="star5"></label>
+              
+              <h6>2</h6><input type="radio" id="star4" name="rating" [(ngModel)]="starRating" [value]="4" />
+              <label for="star4"></label>
+              
+              <h6>3</h6><input type="radio" id="star3" name="rating" [(ngModel)]="starRating" [value]="3" />
+              <label for="star3"></label>
+              
+              <h6>4</h6><input type="radio" id="star2" name="rating" [(ngModel)]="starRating" [value]="2" />
+              <label for="star2"></label>
+              
+              <h6>5</h6><input type="radio" id="star1" name="rating" [(ngModel)]="starRating" [value]="1" />
+              <label for="star1"></label>
+            </div>
+            
+            <div *ngIf="!submitted && starRating === 0" class="text-danger">
+              Rating is required.
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary" (click)="submitFeedback()" [disabled]="starRating === 0">
+              Submit Feedback
+            </button>
+          </div>
+          <div *ngIf="submitted" class="mt-3 text-success">
+            Thank you for your feedback!
+          </div><br>
+          <a href="user-dashboard/home">Go Back To Home Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

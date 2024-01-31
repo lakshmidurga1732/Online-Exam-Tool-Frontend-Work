@@ -1,0 +1,49 @@
+<div class="container">
+    <table class="table table-bordered table-striped" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Subject Id</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="subjectId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isSubjectExist">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" [(ngModel)]="subject.subjectID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Site Id</td>
+            <td>
+                <input type="number" [(ngModel)]="subject.siteID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Site Name</td>
+            <td>
+                <input type="text" [(ngModel)]="subject.subjectName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+

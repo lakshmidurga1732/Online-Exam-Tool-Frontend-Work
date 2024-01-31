@@ -1,0 +1,49 @@
+<!-- Side Panel with Question Numbers -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="side-panel">
+        <!-- <div class="timer">
+          <p>Time remaining: {{ timeRemaining |'mm:ss' }}</p>
+        </div> -->
+        <ul>
+          <li *ngFor="let question of questionbank; let i = index" [class.active]="currentQuestionIndex === i">
+            <a (click)="goToQuestion(i)">Question {{ i + 1 }}</a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="col-md-9">
+      <!-- Main Content - Questions and Options -->
+      <div class="question-container" *ngIf="currentQuestionIndex < questionbank.length">
+        <div class="question">
+          <p><strong>{{ questionbank[currentQuestionIndex].questionText }}</strong></p>
+        </div>
+        <div class="options">
+          <div *ngFor="let option of ['option1', 'option2', 'option3', 'option4']; let i = index">
+            <input type="radio"
+                   id="option{{ i }}"
+                   name="options{{ questionbank[currentQuestionIndex].questionID }}"
+                   [(ngModel)]="userresponse[currentQuestionIndex].userAnswer"
+                   [value]="questionbank[currentQuestionIndex][option]"
+                   required>
+            <label for="option{{ i }}">{{ questionbank[currentQuestionIndex][option] }}</label>
+          </div>
+        </div>
+        <div *ngIf="userresponse[currentQuestionIndex].userAnswer.invalid && 
+                    (userresponse[currentQuestionIndex].userAnswer.dirty || 
+                     userresponse[currentQuestionIndex].userAnswer.touched)" class="text-danger">
+          <div *ngIf="userresponse[currentQuestionIndex].userAnswer.errors && 
+                      userresponse[currentQuestionIndex].userAnswer.errors['required']">
+            Please select an option.
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary float-right" (click)="nextQuestion()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

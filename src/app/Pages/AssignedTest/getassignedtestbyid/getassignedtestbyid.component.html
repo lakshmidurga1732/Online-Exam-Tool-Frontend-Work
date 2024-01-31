@@ -1,0 +1,56 @@
+<div class="container">
+    <table class="table table-bordered table-striped" style="width: 500px;">
+        <tr>
+            <td>
+                <label>AssignmentID </label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="assignedId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isAssignedTestExist">
+        <tr>
+            <td> Assignment Id</td>
+            <td>
+                <input type="number" [(ngModel)]="assignedtest.assignmentID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Test Id</td>
+            <td>
+                <input type="number" [(ngModel)]="assignedtest.testID" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>user id</td>
+            <td>
+                <input type="number" [(ngModel)]="assignedtest.userId" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>ScheduledDateTime</td>
+            <td>
+                <input type="datetime-local" [(ngModel)]="assignedtest.scheduledDateTime" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+

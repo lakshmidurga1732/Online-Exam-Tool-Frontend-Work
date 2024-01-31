@@ -1,0 +1,107 @@
+ <div class="container-fluid" id="main">
+  <div class="row justify-content-center">
+    <div class="col-md-3 col-lg-2 sidebar-offcanvas bg-light pl-0" id="sidebar" role="navigation">
+      <!-- Organization Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-building"></i> ORGANIZATION
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addorganization'"><i class="fas fa-plus"></i> Add Organization</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getallorganization'"><i class="fas fa-list"></i> Get All Organization</a></li>
+        </ul>
+      </div>
+
+      <!-- Site Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-globe"></i> SITE
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addsite'"><i class="fas fa-plus"></i> Add Site</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getallsite'"><i class="fas fa-list"></i> Get All Site</a></li>
+        </ul>
+      </div>
+
+      <!-- Subject Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-book"></i> SUBJECT
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addsubject'"><i class="fas fa-plus"></i> Add Subject</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getallsubject'"><i class="fas fa-list"></i> Get All Subject</a></li>
+        </ul>
+      </div>
+
+      <!-- Question Bank Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-question"></i> QUESTION BANK
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addquestionbank'"><i class="fas fa-plus"></i> Add QuestionBank</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getallquestionbank'"><i class="fas fa-list"></i> Get All QuestionBank</a></li>
+        </ul>
+      </div>
+
+      <!-- Test Structure Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-tasks"></i> TEST STRUCTURE
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addtest'"><i class="fas fa-plus"></i> Add TestStructure</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getalltests'"><i class="fas fa-list"></i> Get All TestStructures</a></li>
+        </ul>
+      </div>
+
+      <!-- Assigned Test Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-tasks"></i> ASSIGNED TEST
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'addassignedtest'"><i class="fas fa-plus"></i> Add Test</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getassignedtests'"><i class="fas fa-list"></i> Get All AssignedTests</a></li>
+        </ul>
+      </div>
+
+      <!-- User Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-user"></i> USER
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getalluser'"><i class="fas fa-list"></i> List of Users</a></li>
+        </ul>
+      </div>
+
+      <!-- User Responses Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-user"></i> USER RESPONSES
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="'getuserresponses'"><i class="fas fa-list"></i> Get All UserResponses</a></li>
+        </ul>
+      </div>
+
+      <!-- Logout Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </div>
+        <ul class="nav flex-column sticky-top pl-0 pt-2 mt-3">
+          <li class="nav-item"><a class="nav-link" [routerLink]="''"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--/col-->
+
+    <div class="col-md-9 col-lg-10 main pt-5 mt-3">
+      <router-outlet></router-outlet>
+    </div>
+    <!--/main col-->
+  </div>
+</div>

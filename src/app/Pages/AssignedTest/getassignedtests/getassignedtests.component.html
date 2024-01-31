@@ -1,0 +1,32 @@
+<div class ='container'>
+    <h2>List of Assigned Tests</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Assigned ID</th>
+                <th>Test ID</th>
+                <th>User Id</th>
+                <th>ScheduledDateTime</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of assignedtest">
+                <td>{{item.assignmentID}}</td>
+                <td>{{item.testID}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.scheduledDateTime}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="edit(item.assignmentID)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+
+
+

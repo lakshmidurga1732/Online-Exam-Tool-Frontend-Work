@@ -1,0 +1,53 @@
+<div class="container">
+    <table class="table" *ngIf="isUserExist">
+        <tr>
+            <td>User Profile Photo</td>
+            <td>
+                <img src="http://localhost:5010/Resources/Images/{{user.uploadImage}}" alt="" width="90" height="80">
+            </td>
+        </tr>
+       <!-- <tr>
+           <td>User ID</td>
+           <td>
+               <input type="text" [(ngModel)]="user.userId" readonly class="form-control">
+           </td>
+       </tr> -->
+       <tr>
+           <td>User Name</td>
+           <td>
+               <input type="text" [(ngModel)]="user.name" class="form-control">
+           </td>
+       </tr>
+       <!-- <tr>
+           <td>User Role</td>
+           <td>
+               <input type="text" [(ngModel)]="user.role" readonly class="form-control">
+           </td>
+       </tr> -->
+       <tr>
+           <td>User Email</td>
+           <td>
+               <input type="text" [(ngModel)]="user.email" class="form-control">
+           </td>
+       </tr>
+       <tr>
+           <td>Password</td>
+           <td>
+               <input type="password" [(ngModel)]="user.password" class="form-control">
+           </td>
+       </tr>
+       <!-- <tr>
+        <td>Site ID </td>
+        <td>
+            <input type="text" [(ngModel)]="user.siteID" readonly class="form-control">
+        </td>
+       </tr>  -->
+       <tr>
+        <td colspan="2">
+            <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+            <span *ngIf="isProfileUpdated" class="text-success">Profile Updated Successfully!</span>
+        </td>
+    </tr>
+    <a href="">Go Back To Login Page</a>
+   </table>
+</div>

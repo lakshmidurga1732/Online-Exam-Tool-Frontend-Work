@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url("https://onlineexamhelp.eklavvya.in/wp-content/uploads/2021/05/New-blogs-2.png?is-pending-load=1");
+    background-size:auto;
+}
+
+.register-form {
+    width: 50%;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(246, 242, 242, 0.8); 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.invalid-feedback {
+    color: red;
+}
+
+.btn-login, .btn-reset, .btn-register {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn-reset {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.btn-register {
+    background-color: #3498db;
+    color: #fff;
+}

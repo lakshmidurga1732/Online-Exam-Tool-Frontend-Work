@@ -1,0 +1,31 @@
+<div class ="container">
+    <h2>List of QuestionBank</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Question ID</th>
+                <th>Subject ID</th>
+                <th>Question Text</th>
+                <th>Answer</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let questionbank of questionbank">
+                <td>{{questionbank.questionID}}</td>
+                <td>{{questionbank.subjectID}}</td>
+                <td>{{questionbank.questionText}}</td>
+                <td>{{questionbank.answer}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="edit(questionbank.questionID)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(questionbank)">Delete</button>
+                </td>
+                  
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+
+

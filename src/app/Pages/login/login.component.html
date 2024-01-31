@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="register-form" style="width: 50%;">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+            <div class="form-group">
+                <h5><label>Email</label></h5>
+                <input type="text" class="form-control" name="useremail" [(ngModel)]="email" required
+                    #useremail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && useremail.errors }" />
+                <div *ngIf="f.submitted && useremail.errors" class="invalid-feedback">
+                    <div *ngIf="useremail.errors['required']">Email is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <h5><label>Password</label></h5>
+                <input type="password" class="form-control" name="userpassword" [(ngModel)]="password" required
+                    minlength="4" maxlength="20" #userpassword="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && userpassword.errors }" />
+                <div *ngIf="f.submitted && userpassword.errors" class="invalid-feedback">
+                    <div *ngIf="userpassword.errors['required']">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <br><button type="submit" class="btn btn-login">Login</button>
+                <button type="button" (click)="onReset(f)" class="btn btn-reset float-right">
+                    Reset
+                </button>
+            </div>
+            <div class="form-group">
+                <span>{{errMsg}}</span>
+            </div>
+            <div class="form-group">
+                
+                <p>If new User! Please Register <br><button type="button" (click)="onRegister()" class="btn btn-register float-left">Register</button></p>
+            </div>
+        </form>
+    </div>
+</div>

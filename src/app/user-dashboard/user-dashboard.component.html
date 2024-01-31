@@ -1,0 +1,80 @@
+<h1>Welcome {{ user.name }}!</h1>
+<div class="container-fluid" id="main">
+  <div class="row">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Online Exam Tool</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'home'">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'edituser'">
+              <i class="fas fa-user"></i>
+              User Profile
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'getassignedtestbyuserid'">
+              <i class="fas fa-tasks"></i>
+              Assigned Tests
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="''">
+              <i class="fas fa-sign-out-alt"></i>
+              LogOut
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div> 
+
+  <!-- <div class="row mt-6">
+    <div class="col-md-6"> -->
+      <!-- User Profile Tile -->
+      <!-- <div class="card mb-6">
+        <div class="card-header"> -->
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" [routerLink]="'edituser'">
+              <i class="fas fa-user"></i>
+              User Profile
+            </a> -->
+          <!-- </li> -->
+        <!-- </div> -->
+        <!-- <div class="card-body"> -->
+          <!-- Edit Your Profile here!
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6"> -->
+      <!-- Assigned Tests Tile -->
+      <!-- <div class="card mb-6"> -->
+        <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link" [routerLink]="'getassignedtestbyuserid'">
+            <i class="fas fa-tasks"></i>
+            Assigned Tests
+          </a> -->
+        <!-- </li> -->
+        <!-- <div class="card-body">
+          You have a test assigned. Check It!
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col main pt-5 mt-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
