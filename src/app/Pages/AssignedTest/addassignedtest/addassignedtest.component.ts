@@ -24,6 +24,12 @@ export class AddassignedtestComponent {
   constructor(private http: HttpClient, private router: Router) {
     this.assignedtest = new Assignedtest();
   }
+  getCurrentDateTime(): string {
+    const now = new Date();
+    // Format the current date and time to be compatible with the input type "datetime-local"
+    const formattedDateTime = now.toISOString().slice(0, 16);
+    return formattedDateTime;
+  }
 
   addassignedtest() {
     console.log(this.assignedtest);

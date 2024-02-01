@@ -13,32 +13,35 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddtestComponent {
   test: Teststructure;
-  
-  
-  
+  selectedSite: { siteID: number, siteName: string } = { siteID: 1, siteName: '' };
+  items = [
+    { siteID: 1, siteName: 'EXAM PLATFORM' },
+    // Add more items as needed
+  ];
+
   httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    Authorization: 'Bearer ' + localStorage.getItem('token'),
-  }),
-};
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    }),
+  };
 
   constructor(private http: HttpClient, private router: Router) {
     this.test = new Teststructure();
   }
-  
-  
+
+  onSiteIdChange(): void {
+    this.selectedSite = this.items.find(item => item.siteID === this.test.siteID) || { siteID: 0, siteName: '' };
+  }
+
   addTestStructure() {
+    this.test.siteID = this.selectedSite.siteID;
     console.log(this.test);
     this.http
-      .post('http://localhost:5010/api/TestStructure/Add', this.test,this.httpOptions)
+      .post('http://localhost:5010/api/TestStructure/Add', this.test, this.httpOptions)
       .subscribe((response) => {
         console.log(response);
         this.router.navigate(['getalltests'], { skipLocationChange: true });
       });
-    // this.router.navigateByUrl('getalltests');
   }
 }
-
-
-

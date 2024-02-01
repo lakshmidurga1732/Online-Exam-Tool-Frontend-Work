@@ -5,9 +5,9 @@
         <tr>
           <th>Test ID</th>
           <th>Test Name</th>
-          <th>Subject ID</th> 
+          <!-- <th>Subject ID</th>  -->
           <th>No of Questions</th>
-          <th>Total Marks</th>
+          <!-- <th>Total Marks</th> -->
           <th>Duration (minutes)</th>
           <th>Actions</th>
         </tr>
@@ -17,9 +17,9 @@
         <tr *ngIf="testStructure">
           <td>{{ testStructure.testID }}</td> 
           <td>{{ testStructure.testName }}</td>
-          <td>{{ testStructure.subjectID }}</td>
+          <!-- <td>{{ testStructure.subjectID }}</td> -->
           <td>{{ testStructure.noOfQuestions }}</td>
-          <td>{{ testStructure.totalMarks }}</td>
+          <!-- <td>{{ testStructure.totalMarks }}</td> -->
           <td>{{ testStructure.duration }}</td>
           <td><button class="btn btn-info" (click)="starttest(testStructure.subjectID)">StartTest</button></td>
         

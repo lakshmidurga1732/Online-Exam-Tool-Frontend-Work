@@ -4,7 +4,7 @@
         <thead class="thead-dark">
             <tr>
                 <th> subject ID</th>
-                <th>site ID</th>
+                <!-- <th>site ID</th> -->
                 <th>Subject Name</th>
                 <th>Actions</th>
 
@@ -13,7 +13,7 @@
         <tbody>
             <tr *ngFor="let item of subjects">
                 <td>{{item.subjectID}}</td>
-                <td>{{item.siteID}}</td>
+                <!-- <td>{{item.siteID}}</td> -->
                 <td>{{item.subjectName}}</td>
                 <td>
                 <button class="btn btn-primary" (click)="edit(item.subjectID)">Edit</button>

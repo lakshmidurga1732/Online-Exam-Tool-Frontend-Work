@@ -31,18 +31,24 @@
 
       <tr>
         <td>
-          <label for="scheduledDateTime">Scheduled Date and Time</label>
+          <label for="scheduledDateTime">Assigned Test</label>
         </td>
         <td>
-          <input type="datetime-local" id="scheduledDateTime" class="form-control" name="scheduledDateTime"
-            [(ngModel)]="assignedtest.scheduledDateTime" required #scheduledDateTime="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && scheduledDateTime.errors }" />
+          <input type="datetime-local" 
+                 id="scheduledDateTime" 
+                 class="form-control" 
+                 name="scheduledDateTime"
+                 [(ngModel)]="assignedtest.scheduledDateTime" 
+                 required 
+                 #scheduledDateTime="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && scheduledDateTime.errors }"
+                 [min]="getCurrentDateTime()" />
           <div *ngIf="f.submitted && scheduledDateTime.errors" class="invalid-feedback">
             <div *ngIf="scheduledDateTime.errors['required']">Scheduled Date and Time is required</div>
+            <div *ngIf="scheduledDateTime.errors['min']">Cannot select past date and time</div>
           </div>
         </td>
       </tr>
-
       <tr>
         <td colspan="2">
           <button type="submit" class="btn btn-primary">Add Assigned Test</button>
