@@ -63,7 +63,7 @@ export class RegisterUserComponent {
       .subscribe((response) => {
         this.httpResponse = response;
         console.log(this.httpResponse);
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('login');
        
       });
       this.sendEmail();

@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Online Exam Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-container {
+      background-image: url('https://takemyexamination.online/wp-content/uploads/2020/10/online-exam.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Set the height of the container as per your requirement */
+      color: white; /* Set the text color for better visibility */
+    }
+
+    .navbar {
+      padding: 20px;
+    }
+
+    .btn {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .btn-register {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    .btn-login {
+      background-color: #008CBA; /* Blue */
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
-  <header>
-    <h1>Online Exam Tool</h1>
-  </header>
 
-  <div class="container">
-    <img src="https://static.vecteezy.com/system/resources/previews/002/130/421/non_2x/online-exam-internet-distance-school-test-banner-landing-page-clock-computer-screen-web-quiz-check-list-boxes-questionnaire-application-digital-education-online-exam-blue-background-vector.jpg" alt="Online Exam Tool Image">
-    <p>
-      Welcome to our Online Exam Tool! Hello Admin!
-    </p>
-    <a href="/admin-dashboard" class="dashboard-link">Go to Dashboard</a>
+  <div class="main-container">
+    <div class="navbar">
+      <!-- <h2>Main Page</h2> -->
+      <!-- <button type="button" onclick="onRegister()" class="btn btn-register float-left">Register</button>
+      <button type="button" onclick="onLogin()" class="btn btn-login float-left">Login</button> -->
+      <a href="registeruser" class="btn btn-register float-left">Register</a>
+      <a href="login" class="btn btn-login float-left">Login</a>
+    </div>
   </div>
+
 </body>
 </html>

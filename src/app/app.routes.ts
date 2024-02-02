@@ -73,12 +73,13 @@ export const routes: Routes = [
     {path:'adduseresponse',component:AdduserresponseComponent},
     {path:'getuserresponses',component:GetuserresponsesComponent},
     {path:'getuserresponsebyid',component:GetuserresponsebyidComponent},
-    {path:'',component:LoginComponent},
+    {path:'login',component:LoginComponent},
     {path:'home',component:HomeComponent},
     {path:'Image',component:ImageUploadComponent},
+    {path:'home1',component:Home1Component},
     
     {path: 'admin-dashboard', component: AdminDashboardComponent, children: [
-      {path: 'home1', component:Home1Component},
+//{path: 'home1', component:Home1Component},
         { path:'addorganization', component:AddorganizationComponent},
         { path:'getallorganization', component:GetallOrganizationComponent},
         { path:'getbyidorganization', component:GetbyidOrganizationComponent},
