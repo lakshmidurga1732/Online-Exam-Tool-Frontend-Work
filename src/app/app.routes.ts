@@ -76,7 +76,7 @@ export const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'home',component:HomeComponent},
     {path:'Image',component:ImageUploadComponent},
-    {path:'home1',component:Home1Component},
+    {path:'',component:Home1Component},
     
     {path: 'admin-dashboard', component: AdminDashboardComponent, children: [
 //{path: 'home1', component:Home1Component},
@@ -97,7 +97,7 @@ export const routes: Routes = [
         {path:'getassignedtests',component:GetassignedtestsComponent},
          {path:'getuserresponses',component:GetuserresponsesComponent},
          {path:'getalluser',component:GetallUserComponent},
-         //{ path: '', component: LoginComponent },
+         { path: 'login', component: LoginComponent },
         
         {path:'Image',component:ImageUploadComponent},
       ],},
@@ -106,7 +106,7 @@ export const routes: Routes = [
         {path:'edituser',component:EditUserComponent},
         {path:'getassignedtestbyuserid',component:GetassignedtestbyuserIdComponent},
         {path:'gettestbytestid/:testID',component:GettestbytestidComponent},
-        // { path: '', component: LoginComponent },
+         { path: 'login', component: LoginComponent },
         {path:'Image',component:ImageUploadComponent},
       ],
       }

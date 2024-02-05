@@ -15,7 +15,7 @@ import { Questionbank } from '../Models/questionbank';
 export class GetquestionsbysubjectidComponent implements OnInit {
   questionbank: Questionbank[] = [];
   userresponse: Userresponse[] = [];
-  subjectId?: number = 0;
+  subjectId?: any;
   testid?: any;
   userid?: any;
   currentQuestionIndex: number = 0; // Keep track of the current question index
@@ -35,6 +35,7 @@ export class GetquestionsbysubjectidComponent implements OnInit {
   ngOnInit(): void {
     this.activatedroute.params.subscribe((p) => {
       this.subjectId = p['subjectID'];
+      localStorage.setItem('subjectId', this.subjectId);
       this.testid = localStorage.getItem('testID');
       this.userid = localStorage.getItem('userId');
       this.starttest();
@@ -42,7 +43,7 @@ export class GetquestionsbysubjectidComponent implements OnInit {
       this.startTimer();
     });
   }
-
+  
   starttest() {
     this.http
       .get<Questionbank[]>('http://localhost:5010/api/QuestionBank/GetBySubjectID/' + this.subjectId, this.httpOptions)
@@ -87,6 +88,7 @@ export class GetquestionsbysubjectidComponent implements OnInit {
     console.log('User Responses', this.userresponse);
     for (let i = 0; i < this.questionbank.length; i++) {
       this.userresponse[i].questionID = this.questionbank[i].questionID;
+      
     }
     for (let item of this.userresponse) {
       console.log(item);
@@ -100,8 +102,14 @@ export class GetquestionsbysubjectidComponent implements OnInit {
             console.error('Error saving user responses:', error);
           }
         );
+        this.router.navigate(['feedback']);
     }
-    // After submitting, navigate to feedback or any other destination
-    this.router.navigate(['feedback']);
+   
   }
+      // Implement the logic for finishing the test
+
+     
+  
+  
+  
 }

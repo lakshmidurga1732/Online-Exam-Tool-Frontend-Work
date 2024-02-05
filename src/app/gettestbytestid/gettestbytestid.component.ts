@@ -48,8 +48,9 @@ export class GettestbytestidComponent {
     
 
   starttest(subjectID: any): void {
-      
+    localStorage.setItem('subId',subjectID);
     this.router.navigate(['getquestionsbysubid/',+subjectID]);
+
   }
 }
 
