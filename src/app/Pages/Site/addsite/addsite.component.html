@@ -1,11 +1,11 @@
 <!-- addsite.component.html -->
 <div class="container">
   <h2>Add Site</h2>
-  <form #f="ngForm" (ngSubmit)="f.form.valid && addsite()">
+  <form #f="ngForm" (ngSubmit)="f.form.valid && addSite()">
     <div class="form-group">
       <label for="orgID">Organization Name</label>
       <select [(ngModel)]="site.orgID" name="orgID" (change)="getAllOrganization($event)" class="form-control">
-        <option *ngFor="let Organization of orgNames" [value]="Organization.orgID">{{ Organization.orgName}}</option>
+        <option *ngFor="let Organization of orgNames" [value]="Organization.id">{{ Organization.name}}</option>
       </select>
     </div>
 

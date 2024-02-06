@@ -32,38 +32,40 @@ export class AddsiteComponent {
 
   getAllOrganization(event?: any) {
     this.http.get<Organization[]>('http://localhost:5010/api/Organization/GetAll', this.httpOptions)
-      .subscribe((response) => {
-        this.orgNames = response;
+          .subscribe((response) => {
+            this.orgNames = response;
+            console.log('orgNames:', this.orgNames);
+            this.addSite(); // Call addSite here or trigger it in response to a user action
+            if(event){
+              this.site.orgID=parseInt(event.target.value, 10);
+              }// Call addQuestionbank here or trigger it in response to a user action
+          });
+      }
+      addSite() {
+        console.log('site:', this.site);
         console.log('orgNames:', this.orgNames);
-      });
-  }
-
-  addSite() {
-    console.log('site:', this.site);
-    console.log('orgNames:', this.orgNames);
-    const selectedOrg = this.orgNames.find(org => org.orgID === this.site.orgID);
+        const selectedOrg = this.orgNames.find(Organization => Organization.id === this.site.orgID)
+        console.log('selectedOrg:', selectedOrg);
     
-    console.log('selectedOrg:', selectedOrg);
-
-    if (!selectedOrg) {
-      console.error('Selected organization not found');
-      return;
-    }
-
-    console.log('selectedOrg:', selectedOrg);
-
-    this.site.orgName = selectedOrg.orgName;
-
-    this.http.post('http://localhost:5010/api/Site/Add', this.site, this.httpOptions)
-      .subscribe(
-        (response) => {
-          console.log(response);
-          this.router.navigate(['getallsite'], { skipLocationChange: true });
-        },
-        (error) => {
-          console.error('Error adding site:', error);
-          // Handle errors as needed
+        if (!selectedOrg) {
+          console.error('Selected organization not found');
+          return;
         }
-      );
-  }
-}
+    
+        console.log('selectedOrg:', selectedOrg);
+    
+        this.site.orgName = selectedOrg.name;
+    
+        this.http.post('http://localhost:5010/api/Site/Add', this.site, this.httpOptions)
+          .subscribe(
+            (response) => {
+              console.log(response);
+              this.router.navigate(['getallsite'], { skipLocationChange: true });
+            },
+            (error) => {
+              console.error('Error adding site:', error);
+              // Handle errors as needed
+            }
+          );
+      }
+    }

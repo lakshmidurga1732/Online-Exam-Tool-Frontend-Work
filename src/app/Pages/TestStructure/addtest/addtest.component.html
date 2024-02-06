@@ -3,34 +3,26 @@
   <h2>Add Test Structure</h2>
   <form name="testForm" #f="ngForm" (ngSubmit)="f.form.valid && addTestStructure()">
     <table class="table">
+      <div class="form-group">
+        <label for="siteID">Site Name</label>
+        <select id="siteID" class="form-control" name="siteID" [(ngModel)]="selectedSite.siteID" (change)="onSiteIdChange()" required
+          #siteID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && siteID.errors }">
+          <option *ngFor="let item of items" [value]="item.siteID">{{ item.siteName }}</option>
+        </select>
+        <div *ngIf="f.submitted && siteID.errors" class="invalid-feedback">
+          <div *ngIf="siteID.errors['required']">Site Name is required</div>
+        </div>
+      </div>
       <tr>
         <td>
-          <label for="siteID">Site Name</label>
+          <label for="subjectID">Subject Name</label>
         </td>
         <td>
-          <select id="siteID" class="form-control" name="siteID" [(ngModel)]="selectedSite.siteID" (change)="onSiteIdChange()" required
-            #siteID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && siteID.errors }">
-            <option *ngFor="let item of items" [value]="item.siteID">{{ item.siteName }}</option>
+          <select [(ngModel)]="test.subjectID" name="subjectID" (change)="getAllSubjects($event)" class="form-control">
+            <option *ngFor="let subject of subjectNames" [value]="subject.subjectID">{{ subject.subjectName }}</option>
           </select>
-          <div *ngIf="f.submitted && siteID.errors" class="invalid-feedback">
-            <div *ngIf="siteID.errors['required']">Site Name is required</div>
-          </div>
         </td>
       </tr>
-
-      <tr>
-        <td>
-          <label for="subjectID">Subject ID</label>
-        </td>
-        <td>
-          <input type="number" id="subjectID" class="form-control" name="subjectID" [(ngModel)]="test.subjectID" required
-            #subjectID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subjectID.errors }" />
-          <div *ngIf="f.submitted && subjectID.errors" class="invalid-feedback">
-            <div *ngIf="subjectID.errors['required']">Subject ID is required</div>
-          </div>
-        </td>
-      </tr>
-
       <tr>
         <td>
           <label for="testName">Test Name</label>

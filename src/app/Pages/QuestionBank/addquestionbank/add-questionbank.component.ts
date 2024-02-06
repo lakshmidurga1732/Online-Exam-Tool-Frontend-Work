@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class AddQuestionbankComponent {
   questionbank: Questionbank;
   subjectNames: Subject[] = []; // Array to store subject names
- 
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
