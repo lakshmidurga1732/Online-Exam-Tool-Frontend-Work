@@ -1,6 +1,7 @@
 export class Questionbank {
     public questionID?:number;
     public subjectID?:number;
+    public subjectName?:string;
     public questionText?:string;
     public option1?:string;
     public option2?:string;

@@ -35,9 +35,9 @@ export class LoginComponent {
           localStorage.setItem('userId', this.httpResponse.userId);
           
           if (this.httpResponse.role == 'User') {
-            this.router.navigateByUrl('user-dashboard');
+            this.router.navigateByUrl('user-dashboard/home');
           } else if (this.httpResponse.role == 'Admin') {
-           this.router.navigateByUrl('admin-dashboard');
+           this.router.navigateByUrl('admin-dashboard/getalluser');
           }
         } else {
           this.errMsg = 'Invalid Credentials';

@@ -1,13 +1,11 @@
 <div class="container">
   <h2>Add Questionbank</h2>
-  <form name="questionbankForm" #f="ngForm" (ngSubmit)="f.form.valid && addQuestionbank()">
+  <form #f="ngForm" (ngSubmit)="f.form.valid && addQuestionbank()">
     <div class="form-group">
-      <label for="subjectID">Subject ID</label>
-      <input type="number" id="subjectID" class="form-control" name="subjectID" [(ngModel)]="questionbank.subjectID" required
-        #subjectID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subjectID.errors }" />
-      <div *ngIf="f.submitted && subjectID.errors" class="invalid-feedback">
-        <div *ngIf="subjectID.errors['required']">Subject ID is required</div>
-      </div>
+      <label for="subjectID">Subject Name</label>
+      <select [(ngModel)]="questionbank.subjectID" name="subjectID" (change)="getAllSubjects($event)" class="form-control">
+        <option *ngFor="let subject of subjectNames" [value]="subject.subjectID">{{ subject.subjectName}}</option>
+      </select>
     </div>
 
     <div class="form-group">
