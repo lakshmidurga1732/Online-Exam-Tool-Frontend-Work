@@ -39,7 +39,7 @@ export class AddQuestionbankComponent {
         console.log('subjectNames:', this.subjectNames);
         this.addQuestionbank();
         if(event){
-          this.questionbank.subjectID=parseInt(event.target.value, 10);
+          this.questionbank.subjectID=(parseInt(event.target.value, 10));
           }// Call addQuestionbank here or trigger it in response to a user action
       });
   }
@@ -60,7 +60,7 @@ export class AddQuestionbankComponent {
     this.questionbank.subjectName = selectedSubject.subjectName;
  
  
-    this.http.post('http://localhost:5010/api/QuestionBank/Add', this.questionbank, this.httpOptions)
+    this.http.post('http://localhost:5010/api/TestStructure/Add', this.questionbank, this.httpOptions)
       .subscribe(
         (response) => {
           console.log(response);
