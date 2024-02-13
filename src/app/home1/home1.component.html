@@ -9,16 +9,27 @@
       font-family: Arial, sans-serif;
     }
     .main-container {
-      background-image: url('https://takemyexamination.online/wp-content/uploads/2020/10/online-exam.jpg');
-      background-size: cover;
+      position: relative;
+      background-image: url('https://s26378.pcdn.co/wp-content/uploads/ap_exam_online.jpg');
+      background-size: 100%;
+      background-position-y: 60%;
       background-position: center;
       background-repeat: no-repeat;
       height: 100vh; /* Set the height of the container as per your requirement */
       color: white; /* Set the text color for better visibility */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .navbar {
-      padding: 20px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .navbar h2 {
+      color: black; /* Change the text color of "Online Exam" */
     }
 
     .btn {
@@ -26,14 +37,19 @@
       cursor: pointer;
     }
 
-    .btn-register {
-      background-color: #4CAF50; /* Green */
+    .btn-register,
+    .btn-login {
+      background-color: #8b4caf; /* Green */
       color: white;
+      text-align: center;
+      display: block;
+      width: 150px;
+      margin: 0 auto;
+      margin-bottom: 20px;
     }
 
     .btn-login {
-      background-color: #008CBA; /* Blue */
-      color: white;
+      background-color: #00ba00; /* Blue */
     }
   </style>
 </head>
@@ -41,11 +57,12 @@
 
   <div class="main-container">
     <div class="navbar">
-      <h2>Online Exam</h2>
-      <!-- <button type="button" onclick="onRegister()" class="btn btn-register float-left">Register</button>
-      <button type="button" onclick="onLogin()" class="btn btn-login float-left">Login</button> -->
-      <a href="registeruser" class="btn btn-register float-right">Register</a>
-      <a href="login" class="btn btn-login float-left">Login</a>
+      
+    </div>
+    <!-- Login and Register buttons centered in the middle of the background image -->
+    <div>
+      <a href="registeruser" class="btn btn-register">Register</a>
+      <a href="login" class="btn btn-login">Login</a>
     </div>
   </div>
 

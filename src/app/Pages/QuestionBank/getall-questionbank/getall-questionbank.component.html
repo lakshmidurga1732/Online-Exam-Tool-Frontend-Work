@@ -4,7 +4,7 @@
         <thead class="thead-dark">
             <tr>
                 <th>Question ID</th>
-                <th>Subject ID</th>
+                <th>Subject Name</th>
                 <th>Question Text</th>
                 <th>Answer</th>
                 <th>Actions</th>
@@ -13,7 +13,7 @@
         <tbody>
             <tr *ngFor="let questionbank of questionbank">
                 <td>{{questionbank.questionID}}</td>
-                <td>{{questionbank.subjectID}}</td>
+                <td>{{questionbank.subjectName}}</td>
                 <td>{{questionbank.questionText}}</td>
                 <td>{{questionbank.answer}}</td>
                 <td>
